@@ -18,13 +18,14 @@ public class BaseActivity  extends AppCompatActivity   {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
-        getSupportActionBar().hide();
+
     }
 
 
     @Override
-    public void setContentView(View view) {
+    public void setContentView(int view) {
         super.setContentView(view);
+        getSupportActionBar().hide();
         setStatusBar();
         setUpView();
 
