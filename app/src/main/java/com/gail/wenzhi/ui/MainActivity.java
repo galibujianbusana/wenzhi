@@ -7,19 +7,19 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.gail.wenzhi.Const.Cons;
 import com.gail.wenzhi.R;
-import com.gail.wenzhi.base.BaseActivity;
+import com.gail.wenzhi.adapter.MoKAdapter;
 import com.gail.wenzhi.bean.TopRootInfo;
-import com.gail.wenzhi.presenter.MainPresenter;
 import com.gail.wenzhi.view.MainView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 
 public class MainActivity extends BaseActivity implements MainView {
 
     private static final String TAG = "MainActivity";
 
     private TextView tv;
-    private MainPresenter mainPresenter;
     private BottomNavigationView navigationView;
 
     @Override
@@ -27,6 +27,7 @@ public class MainActivity extends BaseActivity implements MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: ");
+        UiControllerUtil.getInstance().changeFragment(UiControllerUtil.HOME_TAG,this);
       
     }
 
@@ -41,33 +42,34 @@ public class MainActivity extends BaseActivity implements MainView {
     protected void setUpView() {
         Log.d(TAG, "setUpView: ");
         tv =findViewById(R.id.tv);
-        mainPresenter = new MainPresenter(this);
-        mainPresenter.getTouTiaoData();
+
         navigationView = findViewById(R.id.nav_view);
-        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-               if(menuItem.getTitle().toString().equals("选项一")){
-                   Log.d(TAG, "onNavigationItemSelected: 1");
-               }else if(menuItem.getTitle().toString().equals("选项二")){
-                   Log.d(TAG, "onNavigationItemSelected: 2");
-               }else if(menuItem.getTitle().toString().equals("选项三")){
-                   Log.d(TAG, "onNavigationItemSelected: 3");
-               }
-                return true;
-            }
+        navigationView.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
+        navigationView.setOnNavigationItemSelectedListener(menuItem -> {
+           if(menuItem.getTitle().toString().equals(getString(R.string.title_home))){
+               UiControllerUtil.getInstance().homeFragment.updateType("top","顾远");
+               UiControllerUtil.getInstance().changeFragment(UiControllerUtil.HOME_TAG,MainActivity.this);
+             UiControllerUtil.getInstance().changeFragment(UiControllerUtil.HOME_TAG,MainActivity.this);
+           }else if(menuItem.getTitle().toString().equals(getString(R.string.title_mokuai))){
+               UiControllerUtil.getInstance().changeFragment(UiControllerUtil.MOKUAI_TAG,MainActivity.this);
+           }else if(menuItem.getTitle().toString().equals(getString(R.string.title_msg))){
+               UiControllerUtil.getInstance().changeFragment(UiControllerUtil.SETTING_TAG,MainActivity.this);
+           }else if(menuItem.getTitle().toString().equals(getString(R.string.title_setting))){
+               UiControllerUtil.getInstance().changeFragment(UiControllerUtil.SETTING_TAG,MainActivity.this);
+           }
+            return true;
         });
 
     }
 
     @Override
     public void showSuccessData(TopRootInfo date) {
-        tv.setText(date.getResult().getData().toString());
+       // tv.setText(date.getResult().getData().toString());
     }
 
     @Override
     public void showErrorData(String s) {
-        tv.setText(s);
+      //  tv.setText(s);
     }
 
     @Override

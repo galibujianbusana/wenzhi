@@ -9,6 +9,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.gail.wenzhi.R;
 import com.gail.wenzhi.ui.fragment.HomeFragment;
+import com.gail.wenzhi.ui.fragment.HomeItemFragment;
+import com.gail.wenzhi.ui.fragment.MoKuaiFragment;
 import com.gail.wenzhi.ui.fragment.SettingFragment;
 import com.gail.wenzhi.ui.fragment.WeiXinFragment;
 
@@ -17,13 +19,17 @@ public class UiControllerUtil {
 
     private static final String TAG = "UiControllerUtil";
     private static UiControllerUtil fragmentController = null;
-    private static final int HOME_TAG = 0;
-    private static final int SETTING_TAG = 1;
-    private static final int WEIXIN_TAG = 2;
+    public static final int HOME_TAG = 0;
+    public static final int SETTING_TAG = 1;
+    public static final int WEIXIN_TAG = 2;
+    public static final int HOME_ITEM_TAG = 3;
+    public static final int MOKUAI_TAG = 4;
 
     public HomeFragment homeFragment;
     public SettingFragment settingFragment;
     public WeiXinFragment weiXinFragment;
+    public HomeItemFragment homeItemFragment;
+    public MoKuaiFragment moKuaiFragment;
 
 
     public FragmentTransaction fragmentTransaction;
@@ -61,6 +67,8 @@ public class UiControllerUtil {
         weiXinFragment = new WeiXinFragment();
         settingFragment = new SettingFragment();
         homeFragment = new HomeFragment();
+        homeItemFragment = new HomeItemFragment();
+        moKuaiFragment = new MoKuaiFragment();
 
 
     }
@@ -95,6 +103,10 @@ public class UiControllerUtil {
 
         fragmentTransaction.hide(weiXinFragment);
 
+        fragmentTransaction.hide(homeItemFragment);
+
+        fragmentTransaction.hide(moKuaiFragment);
+
 
 
 
@@ -127,6 +139,18 @@ public class UiControllerUtil {
                     fragmentTransaction.add(R.id.layout_content, weiXinFragment, WEIXIN_TAG + "");
                 }
                 fragmentTransaction.show(weiXinFragment);
+                break;
+            case HOME_ITEM_TAG:
+                if (!homeItemFragment.isAdded() && null == fragmentManager.findFragmentByTag(tag)) {
+                    fragmentTransaction.add(R.id.layout_content, homeItemFragment, HOME_ITEM_TAG + "");
+                }
+                fragmentTransaction.show(homeItemFragment);
+                break;
+            case MOKUAI_TAG:
+                if (!moKuaiFragment.isAdded() && null == fragmentManager.findFragmentByTag(tag)) {
+                    fragmentTransaction.add(R.id.layout_content, moKuaiFragment, MOKUAI_TAG + "");
+                }
+                fragmentTransaction.show(moKuaiFragment);
                 break;
         }
 

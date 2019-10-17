@@ -1,18 +1,18 @@
-package com.gail.wenzhi.base;
+package com.gail.wenzhi.ui;
 
-import android.app.AppComponentFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.view.View;
 import android.view.WindowManager;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.gail.wenzhi.view.MainView;
+import com.gail.wenzhi.R;
+import com.gail.wenzhi.utils.ColorUtils;
+import com.gail.wenzhi.utils.StatusBarUtils;
 
-public class BaseActivity  extends AppCompatActivity   {
+public class BaseActivity extends AppCompatActivity {
 
 
     @Override
@@ -26,14 +26,14 @@ public class BaseActivity  extends AppCompatActivity   {
     public void setContentView(int view) {
         super.setContentView(view);
         getSupportActionBar().hide();
-        setStatusBar();
+        // setStatusBar();
+        StatusBarUtils.setWindowStatusBarColor(this, ColorUtils.toHexEncoding(getResources().getColor(R.color.colorPrimary)));
         setUpView();
-
 
     }
 
 
-    protected void setUpView(){
+    protected void setUpView() {
 
     }
 
@@ -74,7 +74,6 @@ public class BaseActivity  extends AppCompatActivity   {
     protected void onDestroy() {
         super.onDestroy();
     }
-
 
 
 }

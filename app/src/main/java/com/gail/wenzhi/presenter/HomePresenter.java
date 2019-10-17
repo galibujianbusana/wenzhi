@@ -2,27 +2,27 @@ package com.gail.wenzhi.presenter;
 
 import android.util.Log;
 
-import com.gail.wenzhi.base.BasePresenter;
 import com.gail.wenzhi.bean.TopRootInfo;
-import com.gail.wenzhi.callback.MainCallBack;
-import com.gail.wenzhi.model.MainModel;
-import com.gail.wenzhi.view.MainView;
+import com.gail.wenzhi.callback.HomeCallBack;
+import com.gail.wenzhi.model.HomeModel;
+import com.gail.wenzhi.view.HomeView;
 
-public class MainPresenter implements BasePresenter {
+public class HomePresenter {
+
 
     private static final String TAG = "MainPresenter";
-    
-    private MainView view;
 
-    public MainPresenter(MainView view){
+    private HomeView view;
+
+    public HomePresenter(HomeView view){
         this.view = view;
     }
 
-    public void  getTouTiaoData(){
+    public void  getTouTiaoData(String type){
 
         Log.d(TAG, "getTouTiaoData: ");
-        
-        MainModel.getTouTiaoData("top", new MainCallBack() {
+
+        HomeModel.getTouTiaoData(type, new HomeCallBack() {
             @Override
             public void showProgressDialog() {
                 view.showProgressDialog();
@@ -43,6 +43,7 @@ public class MainPresenter implements BasePresenter {
                 view.showErrorData(s);
             }
         });
-
     }
+
+
 }

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/dp_170"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_margin="8dp"
+	app:cardCornerRadius="6dp">
+	
+	<RelativeLayout
+		android:id="@+id/relative"
+		android:layout_margin="@dimen/dp_5"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		
+		<TextView
+			android:id="@+id/titleAuthorName"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="娱乐大咖无极限"
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/darker_gray"/>
+		
+		<TextView
+			android:id="@+id/tvTitle"
+			android:layout_below="@+id/titleAuthorName"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:maxLines="2"
+			android:text="街拍：明媚妖娆的小姐姐，一件吊带背心配牛仔短裤，时尚女人味"
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/black"/>
+		
+		
+		<LinearLayout
+			android:layout_below="@+id/tvTitle"
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+			
+			
+			<ImageView
+				android:id="@+id/img1"
+				android:layout_width="0dp"
+				android:layout_weight="1"
+				android:layout_height="match_parent"
+				android:textSize="@dimen/sp_20"
+				android:textColor="@android:color/darker_gray"
+				android:scaleType="fitXY"
+				android:src="@drawable/png_2"/>
+			
+			<ImageView
+				android:id="@+id/img2"
+				android:layout_width="0dp"
+				android:layout_weight="1"
+				android:layout_height="match_parent"
+				android:textSize="@dimen/sp_20"
+				android:textColor="@android:color/black"
+				android:scaleType="fitXY"
+				android:src="@drawable/png_2"/>
+			
+			<ImageView
+				android:id="@+id/img3"
+				android:layout_width="0dp"
+				android:layout_weight="1"
+				android:layout_height="match_parent"
+				android:textSize="@dimen/sp_20"
+				android:textColor="@android:color/darker_gray"
+				android:scaleType="fitXY"
+				android:src="@drawable/png_2"/>
+			
+			
+		</LinearLayout>
+		
+	
+		
+		
+	</RelativeLayout>
+	
+	
+</androidx.cardview.widget.CardView>
