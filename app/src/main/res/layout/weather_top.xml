@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/dp_170"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_margin="8dp"
+	app:cardCornerRadius="6dp">
+	
+	<RelativeLayout
+		android:id="@+id/relative"
+		android:background="@drawable/w_bg"
+		android:layout_margin="@dimen/dp_5"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		
+		<TextView
+			android:id="@+id/tvCity"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="上海"
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/darker_gray"/>
+		<TextView
+			android:id="@+id/tvCityInfo"
+			android:layout_toRightOf="@+id/tvCity"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="30dp"
+			android:text="多云"
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/darker_gray"/>
+		<TextView
+			android:id="@+id/tvTemper1"
+			android:layout_below="@+id/tvCity"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:maxLines="2"
+			android:text="当前温度 :"
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/black"/>
+		<TextView
+			android:id="@+id/tvTemper"
+			android:layout_toRightOf="@+id/tvTemper1"
+			android:layout_below="@+id/tvCity"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:maxLines="2"
+			android:text="20"
+			android:paddingLeft="30dp"
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/black"/>
+		<TextView
+			android:id="@+id/tv2"
+			android:layout_below="@+id/tvTemper"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:maxLines="2"
+			android:text="当前湿度 :"
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/black"/>
+		<TextView
+			android:id="@+id/tvHumidity"
+			android:layout_toRightOf="@+id/tv2"
+			android:layout_below="@+id/tvTemper"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:maxLines="2"
+			android:text="55"
+			android:paddingLeft="30dp"
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/black"/>
+		
+		
+		<TextView
+			android:id="@+id/tvFeng"
+			android:layout_below="@+id/tvHumidity"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:maxLines="2"
+			android:text="南风"
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/black"/>
+		<TextView
+			android:id="@+id/tvFengJi"
+			android:layout_toRightOf="@+id/tv2"
+			android:layout_below="@+id/tvHumidity"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:maxLines="2"
+			android:text="2 级"
+			android:paddingLeft="30dp"
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/black"/>
+		<TextView
+			android:layout_below="@+id/tvFengJi"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:maxLines="2"
+			android:text="空气质量指数: 33"
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/black"/>
+		
+	
+	
+	</RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

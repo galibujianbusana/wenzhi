@@ -13,6 +13,8 @@ public class RetrofitHelper {
 
     private static Retrofit retrofit;
 
+    private static Retrofit retrofit2;
+
     private static OkHttpClient okHttpClient;
 
 
@@ -31,6 +33,20 @@ public class RetrofitHelper {
         return retrofit;
     }
 
+    public static Retrofit getWeatherInstance() {
+        if (retrofit2 == null) {
+            synchronized (RetrofitHelper.class) {
+                if (retrofit2 == null) {
+                    retrofit2 = new Retrofit.Builder()
+                            .baseUrl(Cons.TIAN_QI_URL)
+                            .client(getOkHttpClient())
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build();
+                }
+            }
+        }
+        return retrofit2;
+    }
 
     private static OkHttpClient getOkHttpClient(){
 

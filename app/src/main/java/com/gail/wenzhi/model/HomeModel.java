@@ -6,7 +6,6 @@ import com.gail.wenzhi.Const.Cons;
 import com.gail.wenzhi.api.ApiService;
 import com.gail.wenzhi.bean.TopRootInfo;
 import com.gail.wenzhi.callback.HomeCallBack;
-import com.gail.wenzhi.callback.MainCallBack;
 import com.gail.wenzhi.utils.RetrofitHelper;
 
 import retrofit2.Call;

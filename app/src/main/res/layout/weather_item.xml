@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/dp_170"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_margin="8dp"
+	app:cardCornerRadius="13dp">
+	
+	<RelativeLayout
+		android:id="@+id/relative"
+		android:background="@drawable/w_bg"
+		android:layout_margin="@dimen/dp_1"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:paddingLeft="5dp">
+		
+		<TextView
+			android:id="@+id/tvTime"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="2019 -10 - 17"
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/holo_red_dark"/>
+		<TextView
+			android:id="@+id/tvTemper"
+			android:layout_below="@+id/tvTime"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="16 ~ 23 摄氏度 "
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/holo_orange_dark"/>
+		<TextView
+			android:id="@+id/tvWeather"
+			android:layout_below="@+id/tvTemper"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:maxLines="2"
+			android:text="多云转晴"
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/holo_orange_light"/>
+		<TextView
+			android:id="@+id/tvF"
+			android:layout_below="@+id/tvWeather"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:maxLines="2"
+			android:text="北风"
+			android:textSize="@dimen/sp_20"
+			android:textColor="@android:color/holo_orange_light"/>
+		
+	
+		
+		<ImageView
+			android:id="@+id/img"
+			android:layout_alignParentRight="true"
+			android:layout_width="100dp"
+			android:layout_height="100dp"
+			android:src="@drawable/w_qing"/>
+	
+	</RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

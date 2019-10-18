@@ -31,7 +31,7 @@ public class Cons {
             R.drawable.yule, R.drawable.tiyu, R.drawable.junshi, R.drawable.keji, R.drawable.caijing, R.drawable.shishang};
 
 
-
-
-   //  http://op.juhe.cn/onebox/bus/query?key=bdacc72db06d0f1d80dd9625cf09c9ba&station=%E6%B8%A9%E5%B7%9E
+    // ?city=%E8%8B%8F%E5%B7%9E&key=
+    public static String TIAN_QI_KEY = "12ec6a9c9b0ca13531bf800ded3bfdd9";
+    public static String TIAN_QI_URL = "http://apis.juhe.cn/simpleWeather/";
 }

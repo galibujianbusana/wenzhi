@@ -2,14 +2,9 @@ package com.gail.wenzhi.ui;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-
-import com.gail.wenzhi.Const.Cons;
 import com.gail.wenzhi.R;
-import com.gail.wenzhi.adapter.MoKAdapter;
 import com.gail.wenzhi.bean.TopRootInfo;
 import com.gail.wenzhi.view.MainView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -53,7 +48,7 @@ public class MainActivity extends BaseActivity implements MainView {
            }else if(menuItem.getTitle().toString().equals(getString(R.string.title_mokuai))){
                UiControllerUtil.getInstance().changeFragment(UiControllerUtil.MOKUAI_TAG,MainActivity.this);
            }else if(menuItem.getTitle().toString().equals(getString(R.string.title_msg))){
-               UiControllerUtil.getInstance().changeFragment(UiControllerUtil.SETTING_TAG,MainActivity.this);
+               UiControllerUtil.getInstance().changeFragment(UiControllerUtil.WEIXIN_TAG,MainActivity.this);
            }else if(menuItem.getTitle().toString().equals(getString(R.string.title_setting))){
                UiControllerUtil.getInstance().changeFragment(UiControllerUtil.SETTING_TAG,MainActivity.this);
            }

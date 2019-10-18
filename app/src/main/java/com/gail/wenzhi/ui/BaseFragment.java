@@ -38,11 +38,11 @@ public class BaseFragment extends Fragment implements BaseView {
 
     @Override
     public void showProgressDialog() {
-        showProgressDialog();
+       // showProgressDialog();
     }
 
     @Override
     public void hideProgressDialog() {
-        hideProgressDialog();
+       // hideProgressDialog();
     }
 }
